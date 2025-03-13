@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+        <th>Title</th>
+        <th>Publisher</th>
+        <th>Year</th>
+        <th>Backcover</th>
+        <th>Isbn</th>
+    </tr>
+  </thead>
+    <tbody>
+      <tr *ngFor="let book of booksObs | async">
+        <td>{{ book.title }}</td>
+        <td>{{ book.publisher }}</td>
+        <td>{{ book.year }}</td>
+        <td>{{ book.backcover }}</td>
+        <td>{{ book.isbn }}</td>
+      </tr>
+    </tbody>
+  </table>

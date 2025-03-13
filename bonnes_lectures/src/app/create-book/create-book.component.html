@@ -1,0 +1,13 @@
+<form #bookForm="ngForm">
+    <label>Title : </label>
+    <input name="title" type="text" required [(ngModel)]="book.title" /><br />
+    <label>Publisher : </label>
+    <input name="publisher" type="text" required [(ngModel)]="book.publisher" /><br />
+    <label>Year : </label>
+    <input type="number" name="year" min="1900" max="2099"  step="1" [(ngModel)]="book.year" /> <br />
+    <label>BackCover : </label>
+    <textarea name="backcover"  [(ngModel)]="book.backcover" ></textarea>  <br />
+    <label>ISBN : </label>
+    <input type="number" name="isbn" [(ngModel)]="book.isbn" /><br/>
+    <button (click)="onSubmit()" >Créer</button>
+</form>
