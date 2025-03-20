@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { Book } from '../../entity/book';
-import { ApiResponse } from '/entity/api-response';
+import { Book } from '../entity/book';
+import { ApiResponse } from '../entity/api-response';
 import { map } from 'rxjs';
 
 @Injectable({
@@ -25,6 +25,17 @@ export class BookService {
       book,
       { headers: this.headers, observe: 'response', responseType: 'json' })
       .pipe(map((response) => response.status === 201))
+  }
+
+  public book(id: number): Observable<Book> {
+    return this.http.get<Book>(this.server+"/"+id,
+      { headers: this.headers, observe: 'body', responseType: 'json' })
+  }
+
+  public deleteBookFromId(id: number): Observable<boolean> {
+    return this.http.delete(this.server + "/" + id.toString(),
+      { headers: this.headers, observe: 'response', responseType: 'json' })
+      .pipe(map((response) => response.status === 204))
   }
 
 

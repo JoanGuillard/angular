@@ -1,0 +1,22 @@
+<table>
+    <thead>
+      <tr>
+          <th>Title</th>
+          <th>Publisher</th>
+          <th>Year</th>
+          <th>Backcover</th>
+          <th>Isbn</th>
+      </tr>
+    </thead>
+      <tbody>
+        <tr *ngIf="book | async as book">
+          <td>{{ book.title }}</td>
+          <td>{{ book.publisher }}</td>
+          <td>{{ book.year }}</td>
+          <td>{{ book.backcover }}</td>
+          <td>{{ book.isbn }}</td>
+          <td><button (click)="onDelete()" >Supprimer</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div routerLinkActive="active"><a routerLink="/menu">Menu</a></div>

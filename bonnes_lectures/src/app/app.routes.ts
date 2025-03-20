@@ -4,6 +4,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { MenuComponent } from './menu/menu.component';
 import { ListeBookComponent } from './liste-book/liste-book.component';
 import { CreateBookComponent } from './create-book/create-book.component';
+import { BookComponent } from './book/book.component';
 
 export const routes: Routes = [
     {path : 'about', component: AboutComponent},
@@ -11,5 +12,6 @@ export const routes: Routes = [
     {path : 'menu' , component : MenuComponent},
     {path : '', component : MenuComponent},
     {path : 'livres', component : ListeBookComponent},
-    {path: 'nouveau', component: CreateBookComponent}
+    {path: 'nouveau', component: CreateBookComponent},
+    {path: 'livres/:id', component: BookComponent }
 ];

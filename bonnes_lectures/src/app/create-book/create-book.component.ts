@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { BookService } from '../services/book.service';
-import { Book } from '../../entity/book';
+import { Book } from '../entity/book';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class CreateBookComponent{
   book : Book = {
+    id:0,
     title:'',
     publisher:'',
     year:0,
