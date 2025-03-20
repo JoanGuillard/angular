@@ -15,7 +15,8 @@
           <td>{{ book.year }}</td>
           <td>{{ book.backcover }}</td>
           <td>{{ book.isbn }}</td>
-          <td><button (click)="onDelete()" >Supprimer</button></td>
+          <td routerLinkActive="active"><a routerLink="/modifier/{{book.id}}">Modifier</a></td>
+          <td ><button (click)="onDelete()" >Supprimer</button></td>
         </tr>
       </tbody>
     </table>

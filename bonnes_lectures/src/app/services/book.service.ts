@@ -12,6 +12,7 @@ export class BookService {
   private server: string = "http://localhost:8000/api/books";
   private headers =
     new HttpHeaders({ 'Content-Type': 'application/ld+json' });
+    private patch_headers = new HttpHeaders({ 'Content-Type': 'application/merge-patch+json' });
   constructor(private http: HttpClient) { }
 
   public all(): Observable<Array<Book>> {
@@ -38,5 +39,11 @@ export class BookService {
       .pipe(map((response) => response.status === 204))
   }
 
+  public modifyBook(Book: Book): Observable<boolean> {
+    return this.http.patch(this.server + "/" + Book.id!.toString(),
+      Book,
+      { headers: this.patch_headers, observe: 'response', responseType: 'json' })
+      .pipe(map((response) => response.status === 200))
+  }
 
 }

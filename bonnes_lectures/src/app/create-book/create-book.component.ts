@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { BookService } from '../services/book.service';
 import { Book } from '../entity/book';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-create-book',
-  imports: [FormsModule],
+  imports: [FormsModule,RouterLink],
   templateUrl: './create-book.component.html',
   styleUrl: './create-book.component.scss'
 })

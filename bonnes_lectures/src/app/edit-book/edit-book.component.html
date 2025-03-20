@@ -1,3 +1,4 @@
+
 <form #bookForm="ngForm">
     <label>Title : </label>
     <input name="title" type="text" required [(ngModel)]="book.title" /><br />
@@ -9,6 +10,6 @@
     <textarea name="backcover"  [(ngModel)]="book.backcover" ></textarea>  <br />
     <label>ISBN : </label>
     <input type="number" name="isbn" [(ngModel)]="book.isbn" /><br/>
-    <button (click)="onSubmit()" >Créer</button>
+    <button (click)="update()" >Modifier</button>
 </form>
 <div routerLinkActive="active"><a routerLink="/menu">Menu</a></div>

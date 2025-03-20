@@ -31,4 +31,6 @@ export class BookComponent implements OnInit {
     let id = Number(idParam);
     this.bookService.deleteBookFromId(id).subscribe((r) => this.router.navigate(["/livres"]))
   }
+
+  
 }

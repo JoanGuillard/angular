@@ -5,6 +5,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ListeBookComponent } from './liste-book/liste-book.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { BookComponent } from './book/book.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
 
 export const routes: Routes = [
     {path : 'about', component: AboutComponent},
@@ -13,5 +14,6 @@ export const routes: Routes = [
     {path : '', component : MenuComponent},
     {path : 'livres', component : ListeBookComponent},
     {path: 'nouveau', component: CreateBookComponent},
-    {path: 'livres/:id', component: BookComponent }
+    {path: 'livres/:id', component: BookComponent },
+    {path: 'modifier/:id', component: EditBookComponent}
 ];
